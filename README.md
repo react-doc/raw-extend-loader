@@ -50,7 +50,7 @@ module.exports = {
 
 - `dir` Copy to the '/path/md' directory.
 - `filename` Optional `underline | dir`, According to the directory to store, or do not create a directory.
-- `sep` Set `filename="underline"`, File name to the directory, using `___` interval, default value `__`.
+- `sep` Set `filename="underline"`, File name to the directory, using `___` interval, default value `__`.
 
 **In your application**
 ```js
