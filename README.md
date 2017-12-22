@@ -7,7 +7,8 @@
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Raw Extend Loader</h1>
-  <p>A loader for webpack that lets you import files as a string, [raw-loader](https://github.com/webpack-contrib/raw-loader) enhanced.</p>
+  <p>A loader for webpack that lets you import files as a string,
+  <a href="https://github.com/webpack-contrib/raw-loader">raw-loader</a> enhanced.</p>
 </div>
 
 <h2 align="center">Install</h2>
