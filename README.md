@@ -34,9 +34,9 @@ module.exports = {
           {
             loader: require.resolve('raw-extend-loader'),
             options: {
-              dir: '/path/md',
+              dir: '/path/md', // Copy to the '/path/md' directory.
               filename: 'dir', // "underline | dir"
-              sep: '___',
+              sep: '___', // filename="underline", File name to the directory, using '___' interval.
             },
           },
         ],
