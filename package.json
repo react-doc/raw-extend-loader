@@ -1,6 +1,6 @@
 {
   "name": "raw-extend-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "raw extend loader module for webpack",
   "keywords": [],
   "author": "Kenny Wang @jaywcjlove",

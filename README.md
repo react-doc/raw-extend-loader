@@ -36,7 +36,7 @@ module.exports = {
             options: {
               dir: '/path/md', // Copy to the '/path/md' directory.
               filename: 'dir', // "underline | dir"
-              sep: '___', // filename="underline", File name to the directory, using '___' interval.
+              sep: '___', // filename="underline", File name to the directory, using '___' interval, default value '__'.
             },
           },
         ],
@@ -45,6 +45,12 @@ module.exports = {
   }
 }
 ```
+
+### option
+
+- `dir` Copy to the '/path/md' directory.
+- `filename` Optional `underline | dir`, According to the directory to store, or do not create a directory.
+- `sep` Set `filename="underline"`, File name to the directory, using `___` interval, default value `__`.
 
 **In your application**
 ```js
