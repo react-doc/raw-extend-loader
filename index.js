@@ -16,6 +16,9 @@ module.exports = function (content) {
   const cb = this.async();
   Promise.resolve().then(() => {
     if (dir) {
+      if (this.resourcePath.indexOf(dir) > -1) {
+        return cb(null, "module.exports = " + JSON.stringify(content));
+      }
       let filenameString = this.resourcePath.replace(this.context + PATH.sep, '');
       let writePath = PATH.resolve(process.cwd(), dir);
       if (filename && filename === 'underline') {
