@@ -10,7 +10,11 @@ const mkdirp = require('mkdirp');
 
 module.exports = function (content) {
   const options = loaderUtils.getOptions(this) || {}
-  const { dir, filename, sep = "dir" } = options;
+  const {
+    dir,
+    filename,
+    sep = "dir"
+  } = options;
   this.cacheable && this.cacheable();
   this.value = content;
   const cb = this.async();
@@ -28,7 +32,7 @@ module.exports = function (content) {
         writePath = PATH.join(writePath, this.resourcePath.replace(process.cwd() + PATH.sep, ''));
       }
       mkdirp(PATH.dirname(writePath), (err) => {
-        FS.writeFile(writePath, JSON.stringify(content), (err) => {
+        FS.writeFile(writePath, content, (err) => {
           if (err) {
             this.emitError('\r\nWrite to directory failed: ' + err);
             return cb(err);
