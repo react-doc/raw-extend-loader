@@ -21,6 +21,10 @@ module.exports = function (content) {
 
   content = JSON.stringify(content).replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
 
+  if (!dir) {
+    return cb(null, "module.exports = " + content);
+  }
+
   Promise.resolve().then(() => {
     if (dir) {
       if (this.resourcePath.indexOf(dir) > -1) {
