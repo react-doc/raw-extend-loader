@@ -18,10 +18,13 @@ module.exports = function (content) {
   this.cacheable && this.cacheable();
   this.value = content;
   const cb = this.async();
+
+  content = JSON.stringify(content).replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
+
   Promise.resolve().then(() => {
     if (dir) {
       if (this.resourcePath.indexOf(dir) > -1) {
-        return cb(null, "module.exports = " + JSON.stringify(content));
+        return cb(null, "module.exports = " + content);
       }
       let filenameString = this.resourcePath.replace(this.context + PATH.sep, '');
       let writePath = PATH.resolve(process.cwd(), dir);
@@ -37,11 +40,11 @@ module.exports = function (content) {
             this.emitError('\r\nWrite to directory failed: ' + err);
             return cb(err);
           }
-          cb(null, "module.exports = " + JSON.stringify(content));
+          cb(null, "module.exports = " + content);
         })
       })
     } else {
-      cb(null, "module.exports = " + JSON.stringify(content));
+      cb(null, "module.exports = " + content);
     }
   }).catch((err) => {
     return err ? cb(new SyntaxError(err)) : cb(err)
